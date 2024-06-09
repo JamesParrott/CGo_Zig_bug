@@ -11,8 +11,11 @@ on:
 
 jobs:
   build_and_run:
-    name: Try to compile on windows
-    runs-on: windows-2022
+    name: Try to compile
+    strategy: 
+      matrix:
+        os: ["windows-2022", "ubuntu-22.04", "macos-14"]
+    runs-on: matrix.os
     
     steps:
     - uses: actions/checkout@v4
