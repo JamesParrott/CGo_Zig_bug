@@ -23,7 +23,7 @@ jobs:
         check-latest: true
 
     - name: Compile
-      run: CC="zig cc" GOOS=darwin GOARCH=arm64 go build -o hello-cgo-zig-macos-arm64 main.go
+      run: CC="zig cc" GOOS=darwin GOARCH=arm64 go build -o hello-cgo-zig-macos-arm64 --cpu apple-m1 main.go
 
     - name: Output Go version
       run: go version
