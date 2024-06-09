@@ -3,10 +3,6 @@ name: "Try to recreate CGo Zig bug"
 on:
   workflow_dispatch:
 
-  push:
-
-
-  pull_request:
 
 
 jobs:
