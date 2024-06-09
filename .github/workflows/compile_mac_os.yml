@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Try to compile
-    runs-on: "macos-14"
+    runs-on: "macos-13"
     
     steps:
     - uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
 
     - name: Compile
       run: |
-        go env -w "CC=zig cc"
+        go env -w "CC=zig cc -mcpu="
         go build  -o hello main.go
         hello
 
