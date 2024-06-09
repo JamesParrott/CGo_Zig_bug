@@ -20,10 +20,12 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.22'
-        check-latest: true
 
     - name: Compile
-      run: CC="zig cc" GOOS=darwin GOARCH=arm64 go build -o hello-cgo-zig-macos-arm64 --cpu="apple-m1" main.go
+      run: |
+        go env -w "CC=zig cc"
+        go build main.go -o hello
+        hello
 
     - name: Output Go version
       run: go version
