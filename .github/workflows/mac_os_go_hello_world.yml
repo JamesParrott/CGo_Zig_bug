@@ -1,0 +1,23 @@
+name: Go Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.18'  # You can specify the Go version you need
+
+    - name: Compile and run Hello World
+      run: |
+        go build -o hello hello.go
+        ./hello
