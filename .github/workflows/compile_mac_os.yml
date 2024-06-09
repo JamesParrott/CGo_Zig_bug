@@ -1,0 +1,37 @@
+name: "Try to recreate CGo Zig bug"
+
+on:
+  workflow_dispatch:
+
+  push:
+
+
+  pull_request:
+
+
+jobs:
+  build:
+    name: Try to compile
+    runs-on: "macos-14"
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Zig
+      uses: goto-bus-stop/setup-zig@v2
+      with:
+        version: 0.13.0
+
+    - name: Compile
+      run: CC='zig cc' go build main.go
+
+    - name: Output Go version
+      run: go version
+
+
+    - name: upload_output
+      id: installer-upload-step
+      uses: actions/upload-artifact@v4
+      with:
+        name: output_mac_os_14
+        path: .
