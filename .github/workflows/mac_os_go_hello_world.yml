@@ -17,7 +17,7 @@ jobs:
       with:
         go-version: '1.22'  # You can specify the Go version you need
 
-    - name: Compile and run Hello World
+    - name: Compile and run CGo Hello World
       run: |
-        go build -o hello hello.go
+        go build -o main main.go
         ./hello
