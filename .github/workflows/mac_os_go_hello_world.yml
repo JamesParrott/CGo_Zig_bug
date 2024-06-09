@@ -20,4 +20,4 @@ jobs:
     - name: Compile and run CGo Hello World
       run: |
         go build -o main main.go
-        ./hello
+        ./main
