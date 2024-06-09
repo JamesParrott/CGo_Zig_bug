@@ -30,6 +30,12 @@ jobs:
       run: CC='zig cc' go build main.go
 
     - name: Output Go version
-      run: go --version
+      run: go version
 
-      
+
+    - name: upload_output
+      id: installer-upload-step
+      uses: actions/upload-artifact@v4
+      with:
+        name: output_${{ matrix.os}}
+        path: .
