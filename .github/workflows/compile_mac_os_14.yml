@@ -1,0 +1,38 @@
+name: "Try to recreate CGo Zig bug on MacOS 14 ( M1?  ARM?)"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Try to compile
+    runs-on: "macos-14"
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Zig
+      uses: goto-bus-stop/setup-zig@v2
+      with:
+        version: 0.13.0
+        
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.22'
+
+    - name: Compile
+      run: |
+        go env -w "CC=zig cc"
+        go build -o hello main.go
+
+    - name: Output Go version
+      run: go version
+
+
+    - name: upload_output
+      id: installer-upload-step
+      uses: actions/upload-artifact@v4
+      with:
+        name: output_mac_os_14
+        path: .
