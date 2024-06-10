@@ -1,4 +1,4 @@
-name: "Try to recreate CGo Zig bug on MacOS"
+name: "Try to recreate CGo Zig bug on MacOS 13 (x86?)"
 
 on:
   workflow_dispatch:
@@ -23,8 +23,7 @@ jobs:
 
     - name: Compile
       run: |
-        go env -w "CC=zig cc"
-        go build -o hello main.go
+        "CC=zig cc" go build -o hello main.go
 
     - name: Output Go version
       run: go version
