@@ -23,9 +23,8 @@ jobs:
 
     - name: Compile
       run: |
-        go env -w "CC=zig cc -mcpu="
-        go build  -o hello main.go
-        hello
+        go env -w "CC=zig cc -mcpu=apple-m1"
+        go build --cpu -o hello main.go
 
     - name: Output Go version
       run: go version
