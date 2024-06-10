@@ -23,8 +23,8 @@ jobs:
 
     - name: Compile
       run: |
-        go env -w "CC=zig cc -mcpu=apple-m1"
-        go build --cpu -o hello main.go
+        go env -w "CC=zig cc"
+        go build -o hello main.go
 
     - name: Output Go version
       run: go version
@@ -34,5 +34,5 @@ jobs:
       id: installer-upload-step
       uses: actions/upload-artifact@v4
       with:
-        name: output_mac_os_14
+        name: output_mac_os_13
         path: .
