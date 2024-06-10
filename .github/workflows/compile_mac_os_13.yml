@@ -23,7 +23,8 @@ jobs:
 
     - name: Compile
       run: |
-        "CC=zig cc" go build -o hello main.go
+        go env -w "CC=zig cc"
+        go build -o hello main.go
 
     - name: Output Go version
       run: go version
