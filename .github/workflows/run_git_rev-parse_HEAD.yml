@@ -1,0 +1,15 @@
+name: "Run Git rev-parse Head"
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build_and_upload_installer:
+    name: Try to compile on Ubuntu with CMake
+    runs-on: "ubuntu-24.04"
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: run git rev-parse HEAD
+      run: git rev-parse HEAD
