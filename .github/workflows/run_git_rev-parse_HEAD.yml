@@ -13,3 +13,6 @@ jobs:
 
     - name: run git rev-parse HEAD
       run: git rev-parse HEAD
+
+    - name: run git rev-parse HEAD in Python
+      run: python -c "import subprocess; print(subprocess.run('git rev-parse HEAD'))"
