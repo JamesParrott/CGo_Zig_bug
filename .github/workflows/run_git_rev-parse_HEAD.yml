@@ -20,6 +20,10 @@ jobs:
 
     - run: echo $VCPKG_INSTALLATION_ROOT
 
+    - run: |
+        cmake -E env VCPKG_ROOT=$VCPKG_INSTALLATION_ROOT
+        echo $VCPKG_ROOT
+
     - run: cmake --version
 
     - name: run git rev-parse HEAD
