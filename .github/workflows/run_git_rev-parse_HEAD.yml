@@ -21,8 +21,7 @@ jobs:
     - run: echo $VCPKG_INSTALLATION_ROOT
 
     - run: |
-        cmake -E env VCPKG_ROOT=$VCPKG_INSTALLATION_ROOT
-        echo $VCPKG_ROOT
+        cmake --help
 
     - run: cmake --version
 
