@@ -20,6 +20,8 @@ jobs:
 
     - run: echo $VCPKG_INSTALLATION_ROOT
 
+    - run: where ninja
+
     - run: |
         cmake --help
 
