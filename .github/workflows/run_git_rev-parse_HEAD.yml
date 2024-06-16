@@ -16,6 +16,9 @@ jobs:
         NEW_PATH=$PATH
         echo $NEW_PATH
 
+    - run: echo $VCPKG_ROOT
+
+    - run: echo $VCPKG_INSTALLATION_ROOT
 
     - name: run git rev-parse HEAD
       run: git rev-parse HEAD
