@@ -20,6 +20,8 @@ jobs:
 
     - run: echo $VCPKG_INSTALLATION_ROOT
 
+    - run: cmake --version
+
     - name: run git rev-parse HEAD
       run: git rev-parse HEAD
 
