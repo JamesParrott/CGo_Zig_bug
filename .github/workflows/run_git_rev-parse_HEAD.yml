@@ -11,6 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: env var test
+      run: |
+        NEW_PATH=$PATH
+        echo $NEW_PATH
+
+
     - name: run git rev-parse HEAD
       run: git rev-parse HEAD
 
