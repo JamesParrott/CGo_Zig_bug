@@ -1,0 +1,12 @@
+name: "Run Git rev-parse Head"
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build_and_upload_installer:
+    name: Try to compile on Ubuntu with CMake
+    runs-on: "windows-2022"
+    steps:
+    - run: Rscript --version
