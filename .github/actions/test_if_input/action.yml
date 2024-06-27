@@ -8,7 +8,7 @@ inputs:
   some_variable:
     required: false
     type: boolean
-    default: false
+    default: ''
     description: 'Boolean input variable'
 
 runs:
