@@ -7,7 +7,7 @@ description:
 inputs:
   some_variable:
     required: false
-    default: ''
+    default: 0
     description: 'Boolean input variable'
 
 runs:
