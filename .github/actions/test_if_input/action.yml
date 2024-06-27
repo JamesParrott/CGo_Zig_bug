@@ -7,9 +7,8 @@ description:
 inputs:
   some_variable:
     required: false
-    type: boolean
     default: ''
-    description: 'Boolean input variable'
+    description: "'Boolean' input variable"
 
 runs:
   using: "composite"
