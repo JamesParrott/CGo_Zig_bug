@@ -1,0 +1,22 @@
+name: "CMake, GCC, & Ubuntu.  Compile .so."
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  test_installer:
+
+
+
+    name: "Run test action. "
+    
+    runs-on: "ubuntu-24.04"
+
+
+    steps:
+
+    - name: Run test 
+      uses: ./.github/actions/test_if_input.yml
+      with:
+        some_variable: true
