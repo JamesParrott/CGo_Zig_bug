@@ -1,0 +1,19 @@
+name: 
+  Test input in an if in a job step.
+
+description:
+  Basic test
+  
+inputs:
+  some_variable:
+    required: false
+    default: false
+    description: 'Boolean input variable'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Test_if
+      if: inputs.some_variable
+      shell: bash
+      run: echo No!! This should not run
