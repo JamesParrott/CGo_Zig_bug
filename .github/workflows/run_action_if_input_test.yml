@@ -22,5 +22,5 @@ jobs:
     
     - name: Run test 
       uses: ./.github/actions/test_if_input
-      # with:
-      #   some_variable: true 
+      with:
+        some_variable: true 
