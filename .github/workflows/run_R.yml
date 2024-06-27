@@ -1,12 +1,15 @@
-name: "Run R on Windows"
+name: "Run R"
 
 on:
   workflow_dispatch:
 
 
 jobs:
+  strategy:
+    matrix:
+      os: ["windows-2022", "ubuntu-24.04"]
   build_and_upload_installer:
     name: Try to compile on Ubuntu with CMake
-    runs-on: "windows-2022"
+    runs-on: matrix.os
     steps:
     - run: Rscript --version
