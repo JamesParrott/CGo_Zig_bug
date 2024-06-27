@@ -1,4 +1,4 @@
-name: "CMake, GCC, & Ubuntu.  Compile .so."
+name: "If: input.var Action test."
 
 on:
   workflow_dispatch:
