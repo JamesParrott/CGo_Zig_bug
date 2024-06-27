@@ -3,6 +3,8 @@ name: "If: input.var Action test."
 on:
   workflow_dispatch:
 
+  push:
+
 jobs:
 
   test_installer:
@@ -16,6 +18,8 @@ jobs:
 
     steps:
 
+    - uses: actions/checkout@v4
+    
     - name: Run test 
       uses: ./.github/actions/test_if_input.yml
       with:
