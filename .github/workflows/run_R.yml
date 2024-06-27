@@ -17,3 +17,4 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y r-cran-optparse r-cran-sjstats
     - run: Rscript --version
+    - run: python3 -c "import subprocess; print(subprocess.check_output('Rscript --version'))"
